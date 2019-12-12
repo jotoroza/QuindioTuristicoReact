@@ -12,6 +12,9 @@ import {
     View,
     H1
 } from 'native-base';
+import { 
+    Linking 
+} from 'react-native';
 import Firebase from '../FireBase';
 
 export default class VerHotel extends Component {
@@ -90,14 +93,17 @@ export default class VerHotel extends Component {
                             value={this.state.sitioweb}
                             onChangeText={(value) => this.setState({ sitioweb: value })}
                         />
+                    </Item>
+                    <View style={{ marginTop: 20 }}></View>
+                    <View style={{ marginTop: 10, marginBotton: 10, paddingLeft: 125, paddingRight: 125 }}>
                         <Button
                             style={{ marginLeft: 20 }}
                             danger
-                            onPress={() => this.borrarMedico(medico.id)}
+                            onPress={() => {Linking.openURL('http://'+this.state.sitioweb);}}
                         >
                             <Text>Ir</Text>
                         </Button>
-                    </Item>
+                    </View>
                     <View style={{ marginTop: 20 }}></View>
                     <Item floatingLabel>
                         <Label>Correo <Text style={{ color: "red" }}>*</Text></Label>
@@ -111,6 +117,16 @@ export default class VerHotel extends Component {
                         />
                     </Item>
                     <View style={{ marginTop: 20 }}></View>
+                    <View style={{ marginTop: 10, marginBotton: 10, paddingLeft: 125, paddingRight: 125 }}>
+                        <Button
+                            style={{ marginLeft: 20 }}
+                            success
+                            onPress={() => {Linking.openURL('mailto:'+this.state.correo+'?subject=Asunto&body=Mensaje ');}}
+                        >
+                            <Text>Correo</Text>
+                        </Button>
+                    </View>
+                    <View style={{ marginTop: 20 }}></View>
                     <Item floatingLabel>
                         <Label>Telefono <Text style={{ color: "red" }}>*</Text></Label>
                         <Input
@@ -123,6 +139,16 @@ export default class VerHotel extends Component {
                         />
                     </Item>
                     <View style={{ marginTop: 20 }}></View>
+                    <View style={{ marginTop: 10, marginBotton: 10, paddingLeft: 100, paddingRight: 100 }}>
+                        <Button
+                            style={{ marginLeft: 20 }}
+                            warning
+                            onPress={() => {Linking.openURL('tel:032'+this.state.telefono);}}
+                        >
+                            <Text>Telefono</Text>
+                        </Button>
+                    </View>
+                    <View style={{ marginTop: 20 }}></View>
                     <Item floatingLabel last>
                         <Label>Celular <Text style={{ color: "red" }}>*</Text></Label>
                         <Input
@@ -134,6 +160,17 @@ export default class VerHotel extends Component {
                             onChangeText={(value) => this.setState({ celular: value })}
                         />
                     </Item>
+                    <View style={{ marginTop: 20 }}></View>
+                    <View style={{ marginTop: 10, marginBotton: 10, paddingLeft: 100, paddingRight: 100 }}>
+                        <Button
+                            style={{ marginLeft: 20 }}
+                            info
+                            onPress={() => {Linking.openURL('tel:'+this.state.celular);}}
+                        >
+                            <Text>Celular</Text>
+                        </Button>
+                    </View>
+                    <View style={{ marginTop: 20 }}></View>
                 </Content>
                 <Footer>
                     <FooterTab>
