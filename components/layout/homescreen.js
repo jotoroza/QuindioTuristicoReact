@@ -12,7 +12,7 @@ export default class HomeScreen extends Component {
                 <Content>
                     <View style={{marginTop: 30}}></View>
                     <Button block bordered success
-                        // onPress={() => navigate('AgregarMedico')}
+                        onPress={() => navigate('SitiosTuristicosScreen')}
                     >
                         <Text>Sitios Turisticos</Text>
                     </Button>
@@ -24,7 +24,7 @@ export default class HomeScreen extends Component {
                     </Button>
                     <View style={{marginTop: 30}}></View>
                     <Button block bordered info
-                        // onPress={() => navigate('ListarMedicos')}
+                        onPress={() => navigate('OperadoresTuristicosScreen')}
                     >
                         <Text>Operadores Turisticos</Text>
                     </Button>
