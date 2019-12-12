@@ -90,6 +90,9 @@ export default class VerSitiosTuristicos extends Component {
                             value={this.state.sitioweb}
                             onChangeText={(value) => this.setState({ sitioweb: value })}
                         />
+                    </Item>
+                    <View style={{ marginTop: 20 }}></View>
+                    <View>
                         <Button
                             style={{ marginLeft: 20 }}
                             danger
@@ -97,7 +100,7 @@ export default class VerSitiosTuristicos extends Component {
                         >
                             <Text>Ir</Text>
                         </Button>
-                    </Item>
+                    </View>
                     <View style={{ marginTop: 20 }}></View>
                     <Item floatingLabel>
                         <Label>Correo <Text style={{ color: "red" }}>*</Text></Label>
